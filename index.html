@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🌷 Para Patronchita 🌷</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #e0f7fa);
+      color: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .tarjeta {
+      max-width: 800px;
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #d81b60;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.8;
+      margin: 15px 0;
+    }
+
+    .emote {
+      margin: 0 8px;
+    }
+
+    .galeria {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .galeria img {
+      width: 220px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    audio {
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CORAZONES */
+    .corazon {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 24px;
+      animation: flotar 8s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* LLUVIA */
+    .lluvia {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .lluvia span {
+      position: absolute;
+      bottom: 100%;
+      width: 2px;
+      height: 20px;
+      background: rgba(0, 0, 255, 0.2);
+      animation: caer 1s linear infinite;
+    }
+
+    @keyframes caer {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- EFECTO LLUVIA -->
+  <div class="lluvia">
+    <!-- 50 gotas -->
+    <script>
+      for (let i = 0; i < 50; i++) {
+        const drop = document.createElement("span");
+        drop.style.left = Math.random() * 100 + "vw";
+        drop.style.animationDuration = (0.5 + Math.random()) + "s";
+        drop.style.height = Math.random() * 30 + 10 + "px";
+        document.querySelector(".lluvia").appendChild(drop);
+      }
+    </script>
+  </div>
+
+  <!-- EFECTO CORAZONES -->
+  <script>
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("corazon");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      heart.textContent = "💖";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }, 500);
+  </script>
+
+  <div class="tarjeta">
+    <h1>💖 Para mi querida Patronchita 💖</h1>
+
+    <p><span class="emote">🌸</span> Eres alguien muy especial en mi vida <span class="emote">🌸</span></p>
+    <p><span class="emote">🌷</span> Me siento afortunada de tenerte como una figura materna <span class="emote">🌷</span></p>
+    <p><span class="emote">🏡</span> Eres mi refugio, mi lugar seguro <span class="emote">✨</span></p>
+    <p><span class="emote">🎁</span> Tu presencia es un regalo, y aunque no estés siempre conmigo,<br> te siento cerca de mí <span class="emote">💫</span></p>
+    <p><span class="emote">🤗</span> Gracias por estar ahí para mí, por escucharme y apoyarme <span class="emote">💓</span></p>
+    <p><span class="emote">💗</span> Te quiero mucho, mi dulce Patronchita <span class="emote">💗</span></p>
+    <p><span class="emote">🐰</span> Eres mi ameri uwu <span class="emote">🌙</span></p>
+    <p><span class="emote">👩‍👧</span> Eres como una mamá para mí, y tus consejos y tus retos me ayudan a ser mejor cada día <span class="emote">✨</span></p>
+    <p><span class="emote">🌠</span> Donde quiera que vaya, te siento conmigo <span class="emote">💞</span></p>
+
+    <audio controls autoplay loop>
+      <source src="audio/tema.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="galeria">
+      <img src="imagenes/imagen1.jpg" alt="Imagen 1">
+      <img src="imagenes/imagen2.jpg" alt="Imagen 2">
+      <img src="imagenes/imagen3.jpg" alt="Imagen 3">
+      <img src="imagenes/imagen4.jpg" alt="Imagen 4">
+    </div>
+  </div>
+
+</body>
+</html>
